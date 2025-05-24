@@ -1,0 +1,167 @@
+@use "../global" as g;
+
+/*!
+page > greeting
+------------------------------
+*/
+.greeting {
+    padding: 48rem 0 120rem;
+    position: relative;
+
+    @include g.mq() {
+        padding: 96rem 0 181rem;
+        display: grid;
+        grid-template-columns: 533rem 1fr;
+        gap: 87rem;
+        overflow: hidden;
+    }
+}
+
+.greeting-img {
+    position: absolute;
+    bottom: 71rem;
+    right: 0;
+    z-index: 1;
+
+    @include g.mq() {
+        bottom: 97rem;
+        right: 84rem;
+    }
+}
+
+.greeting-img img {
+    width: 132rem;
+    height: 200rem;
+    aspect-ratio: 132 / 200;
+    object-fit: cover;
+    object-position: left;
+
+    @include g.mq() {
+        width: 300rem;
+        height: 300rem;
+        aspect-ratio: 300 / 300;
+    }
+}
+
+.greeting-bg-text {
+    position: absolute;
+    top: 667rem;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+
+    @include g.mq() {
+        width: 940rem;
+        top: 316rem;
+        right: 0;
+    }
+}
+
+.greeting-content-img {
+    width: 282rem;
+    position: relative;
+    z-index: 2;
+
+    @include g.mq() {
+        width: 533rem;
+    }
+}
+
+.greeting-content {
+    margin-top: 46rem;
+    padding: 0 20rem;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
+    @include g.mq() {
+        margin-top: 76rem;
+        padding: 0;
+        overflow: visible;
+    }
+}
+
+.greeting-title {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+}
+
+.greeting-title-en {
+    font-size: 32rem;
+    font-family: var(--font-family-en);
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1.5;
+
+    @include g.mq() {
+        font-size: 42rem;
+    }
+}
+
+.greeting-title-jp {
+    font-size: 14rem;
+    color: var(--color-font-light);
+}
+
+.greeting-text {
+    margin-top: 32rem;
+    font-weight: 700;
+    font-size: 32rem;
+
+    @include g.mq() {
+        font-size: 40rem;
+        margin-top: 56rem;
+    }
+}
+
+.greeting-text02,
+.greeting-text03 {
+    line-height: 2.2;
+}
+
+.greeting-text02 {
+    margin-top: 32rem;
+}
+
+.greeting-text03 {
+    margin-top: 24rem;
+}
+
+.greeting-button {
+    padding: 13rem 23rem;
+    border-radius: 100vh;
+    border: 1px solid var(--color-font-base);
+    margin-top: 32rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 16rem;
+    transition: scale 0.3s;
+    font-size: 14rem;
+
+    @include g.mq() {
+        font-size: 16rem;
+        margin-top: 56rem;
+        padding: 17rem 31rem;
+        gap: 32rem;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            scale: 1.03;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        mask-image: url("../img/icon-arrow.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-font-base);
+        width: 7rem;
+        height: 12rem;
+    }
+}

@@ -1,0 +1,30 @@
+@use "../global" as g;
+
+/*!
+page > kv
+------------------------------
+*/
+.kv {
+    height: 100svh;
+    background-image: url(../img/kv/bg-kv-sp.jpg);
+    background-size: cover;
+    background-position: center;
+
+    @include g.mq() {
+        background-image: url(../img/kv/bg-kv.jpg);
+        height: calc(100svh + 80rem);
+    }
+}
+
+.kv-copy {
+    width: 357rem;
+    position: absolute;
+    top: 40.5%;
+    left: 50%;
+    translate: -50% 0;
+
+    @include g.mq() {
+        width: 664rem;
+        top: 234rem;
+    }
+}

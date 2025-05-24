@@ -1,0 +1,183 @@
+@use "../global" as g;
+
+/*!
+page > interview
+------------------------------
+*/
+.interview {
+    overflow: hidden;
+}
+
+.interview-img img {
+    aspect-ratio: 380 / 320;
+    object-fit: cover;
+
+    @include g.mq() {
+        aspect-ratio: 2880 / 944;
+    }
+}
+
+.interview-content {
+    background-color: var(--color-bg-base);
+    position: relative;
+    padding: 80rem 0;
+    margin: -40rem 19rem 0;
+
+    @include g.mq() {
+        padding: 120rem 104rem;
+        margin: -80rem 70rem 0;
+    }
+}
+
+.interview-bg-text {
+    position: absolute;
+    top: 464rem;
+    left: -19rem;
+    width: 100vw;
+    pointer-events: none;
+
+    @include g.mq() {
+        top: 190rem;
+        left: -70rem;
+    }
+}
+
+.interview-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.interview-title {
+    text-align: center;
+}
+
+.interview-title-en {
+    font-size: 32rem;
+    font-family: var(--font-family-en);
+    text-transform: uppercase;
+    font-weight: 400;
+
+    @include g.mq() {
+        font-size: 42rem;
+    }
+}
+
+.interview-title-jp {
+    font-size: 13rem;
+    color: var(--color-font-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+
+    @include g.mq() {
+        font-size: 14rem;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: 48rem;
+        height: 1rem;
+        background-color: var(--color-font-light);
+
+        @include g.mq() {
+            width: 76rem;
+        }
+    }
+}
+
+.interview-list {
+    margin-top: 40rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 44rem;
+
+    @include g.mq() {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.interview-item {
+    &:nth-child(2) {
+        @include g.mq() {
+            margin-top: 56rem;
+        }
+    }
+}
+
+.interview-item-img {
+    position: relative;
+}
+
+.interview-item-text {
+    position: absolute;
+    bottom: 16rem;
+    left: 16rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    font-size: 20rem;
+    font-weight: 700;
+
+    @include g.mq() {
+        bottom: 24rem;
+        left: 24rem;
+        gap: 8rem;
+        font-size: 22rem;
+    }
+
+    span {
+        display: block;
+        width: fit-content;
+        background-color: var(--color-white);
+        padding: 3rem 8rem;
+    }
+}
+
+.interview-item-button {
+    margin-top: 24rem;
+    display: flex;
+    align-items: center;
+    padding: 18rem 32rem;
+    font-size: 14rem;
+    font-weight: 700;
+    border-radius: 100vh;
+    max-width: 272rem;
+    margin-inline: auto;
+    transition: scale 0.3s;
+
+    @include g.mq() {
+        max-width: 304rem;
+        font-size: 16rem;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            scale: 1.03;
+        }
+    }
+
+    &.--nurse {
+        background: var(--color-bg-gradient-light-blue);
+    }
+
+    &.--staff {
+        background: var(--color-bg-gradient-light-green);
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        mask-image: url("../img/icon-arrow.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-font-base);
+        width: 7rem;
+        height: 12rem;
+        margin-left: auto;
+    }
+}

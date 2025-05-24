@@ -1,0 +1,124 @@
+@use "../global" as g;
+
+/*!
+page > entry
+------------------------------
+*/
+.entry {
+    background-color: var(--color-bg-entry);
+
+    @include g.mq() {
+        margin: 0 70rem;
+        display: grid;
+        grid-template-columns: 740rem 1fr;
+    }
+}
+
+.entry-img img {
+    aspect-ratio: 380/240;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    @include g.mq() {
+        aspect-ratio: 740/472;
+    }
+}
+
+.entry-content {
+    padding: 48rem 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20rem;
+
+    @include g.mq() {
+        padding: 48rem 72rem;
+        justify-content: center;
+        gap: 30rem;
+    }
+}
+
+.entry-title-en {
+    font-size: 32rem;
+    text-transform: uppercase;
+    font-family: var(--font-family-en);
+    font-weight: 400;
+
+    @include g.mq() {
+        font-size: 42rem;
+    }
+}
+
+.entry-title-jp {
+    font-size: 13rem;
+    color: var(--color-font-light);
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+
+    @include g.mq() {
+        font-size: 14rem;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 39rem;
+        height: 1rem;
+        background-color: var(--color-font-light);
+
+        @include g.mq() {
+            width: 70rem;
+        }
+    }
+}
+
+.entry-text {
+    line-height: 2;
+
+    span {
+        display: block;
+    }
+}
+
+.entry-button {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    padding: 18rem 32rem 14rem;
+    background: var(--color-bg-gradient-blue);
+    color: var(--color-white);
+    border-radius: 100vh;
+    transition: scale 0.3s;
+    width: fit-content;
+
+    @media (any-hover: hover) {
+        &:hover {
+            scale: 1.02;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        mask-image: url("../img/icon-arrow.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-white);
+        width: 11rem;
+        height: 20rem;
+        margin-left: 80rem;
+    }
+}
+
+.entry-button-en {
+    font-size: 24rem;
+    text-transform: uppercase;
+    font-family: var(--font-family-en);
+    font-weight: 400;
+}
+
+.entry-button-jp {
+    font-size: 14rem;
+}

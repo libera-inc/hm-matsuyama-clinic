@@ -1,0 +1,113 @@
+@use "../global" as g;
+
+/*!
+layout > footer
+------------------------------
+*/
+.footer {
+    padding: 56rem 20rem;
+
+    @include g.mq() {
+        display: grid;
+        grid-template-columns: 283rem 1fr auto;
+        align-items: center;
+        gap: 0 32rem;
+        padding: 56rem 70rem;
+    }
+}
+
+.footer-logo {
+    width: 156rem;
+    margin-inline: auto;
+
+    @include g.mq() {
+        width: 100%;
+    }
+}
+
+.footer-list {
+    margin-top: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16rem 32rem;
+    justify-content: center;
+
+    @include g.mq() {
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+}
+
+.footer-item {
+    font-weight: 700;
+}
+
+.footer-button {
+    margin-top: 32rem;
+    padding: 14rem 24rem;
+    border-radius: 100vh;
+    margin-top: 32rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 16rem;
+    font-size: 14rem;
+    background: var(--color-bg-gradient-light-blue);
+    width: fit-content;
+    margin-inline: auto;
+    transition: scale 0.3s;
+
+    @include g.mq() {
+        margin-top: 0;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            scale: 1.03;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        mask-image: url("../img/icon-arrow.svg");
+        background-color: var(--color-font-base);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        width: 7rem;
+        height: 12rem;
+    }
+}
+
+.footer-list02 {
+    margin-top: 56rem;
+    display: flex;
+    gap: 30rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include g.mq() {
+        grid-column: 1/-1;
+        justify-content: flex-end;
+    }
+}
+
+.footer-item02 {
+    font-size: 12rem;
+    font-weight: 500;
+}
+
+.footer-copyright {
+    display: block;
+    text-align: center;
+    margin-top: 22rem;
+    font-size: 12rem;
+    font-family: var(--font-family-en);
+    font-weight: 400;
+
+    @include g.mq() {
+        grid-column: 1/-1;
+        text-align: right;
+    }
+}
